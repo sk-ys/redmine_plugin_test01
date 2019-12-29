@@ -1,4 +1,3 @@
-C:. 
 +---app 
 |   +---controllers 
 |   +---helpers 
@@ -15,8 +14,8 @@ C:.
 +---lib 
 |   \---tasks 
 \---test 
-+---fixtures 
-+---functional 
-+---integration 
-+---system 
-\---unit 
+    +---fixtures 
+    +---functional 
+    +---integration 
+    +---system 
+    \---unit 
