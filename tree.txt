@@ -1,0 +1,22 @@
+C:. 
++---app 
+|   +---controllers 
+|   +---helpers 
+|   +---models 
+|   \---views 
++---assets 
+|   +---images 
+|   +---javascripts 
+|   \---stylesheets 
++---config 
+|   \---locales 
++---db 
+|   \---migrate 
++---lib 
+|   \---tasks 
+\---test 
++---fixtures 
++---functional 
++---integration 
++---system 
+\---unit 
