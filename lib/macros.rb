@@ -4,12 +4,14 @@ module Macros
   Redmine::WikiFormatting::Macros.register do
 
     #A macro named KB in upper case will be considered as an acronym and will break the macro
-    desc "Knowledge base Article link Macro, using the kb# format"
+    # desc "Knowledge base Article link Macro, using the kb# format"
+    desc "test wikimacro"
     macro :kb do |obj, args|
       args, options = extract_macro_options(args, :parent)
       raise 'No or bad arguments.' if args.size != 1
-      article = KbArticle.find(args.first)
-      link_to_article(article)
+      # article = KbArticle.find(args.first)
+      # link_to_article(article)
+      test_wikimacro(args)  # add
     end
 
     desc "Knowledge base Article link Macro, using the article_id# format"
