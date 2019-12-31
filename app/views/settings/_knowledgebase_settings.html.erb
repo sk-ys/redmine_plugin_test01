@@ -49,3 +49,8 @@
   <%= label_tag :settings_critical_tags, l(:critical_tags) %>
   <%= text_field_tag "settings[critical_tags]", @settings[:critical_tags] %>
 </p>
+
+<p>
+  <%= label_tag :settings_flg_hook_test, 'hook callback test' %>
+  <%= check_box_tag 'settings[flg_hook_test]', 1, @settings[:flg_hook_test] %>
+</p>
