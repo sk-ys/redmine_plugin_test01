@@ -1,1 +1,32 @@
 <h2>ArticlesController#index</h2>
+
+<% if (@articles.blank?) %>
+  <p class="nodata"><%= l(:message_no_articles) %></p>
+<% else %>
+  <table class="list">
+    <thead><tr>
+      <th>#</th>
+      <th>boolean</th>
+      <th>binary</th>
+      <th>integer</th>
+      <th>float</th>
+      <th>string</th>
+      <th>text</th>
+      <th>datetime</th>
+    </tr></thead>
+    <tbody>
+      <% @articles.each do |article| %>
+      <tr class="<%= cycle('odd', 'even') %>">
+        <td><%= article.id %></td>
+        <td><%= link_to article.boolean %></td>
+        <td><%= link_to article.binary %></td>
+        <td><%= link_to article.integer %></td>
+        <td><%= link_to article.float %></td>
+        <td><%= link_to article.string %></td>
+        <td><%= link_to article.text %></td>
+        <td><%= link_to article.datetime %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
