@@ -9,7 +9,7 @@
     <%= form.label(:binary, 1, value: 1)  %>
   </p>
   <p><%= form.number_field :integer %></p>
-  <p><%= form.number_field :float %></p>
+  <p><%= form.number_field :float, :step => 0.01 %></p>
   <p><%= form.datetime_field :datetime %></p>
   <p><%= form.text_field :string, :size => 100 %></p>
   <p><%= form.text_area :text, :class => 'wiki-edit' %></p>
