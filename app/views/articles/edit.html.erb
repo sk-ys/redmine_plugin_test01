@@ -1,0 +1,10 @@
+<% html_title l(:title_edit_article) %>
+
+<h2><%= l(:label_title_articles) %>#<%= @article.id %></h2>
+
+<%= labelled_form_for :article, @article,
+	url: { action: 'update' },
+	html: {multipart: true, id: 'articles-form'} do |form| %>
+	<%= render partial: 'form', locals: {form: form} %>
+	<%= form.submit l(:button_edit) %>
+<% end %>

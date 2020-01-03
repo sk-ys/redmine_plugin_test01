@@ -29,6 +29,9 @@ class ArticlesController < ApplicationController
     redirect_to({ :action => 'index', :project_id => @project })
   end
 
+  def edit
+  end
+
 private
   def find_project
     @project = Project.find(params[:project_id])
