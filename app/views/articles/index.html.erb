@@ -24,13 +24,13 @@
       <% @articles.each do |article| %>
       <tr class="<%= cycle('odd', 'even') %>">
         <td><%= article.id %></td>
-        <td><%= link_to article.boolean %></td>
-        <td><%= link_to article.binary %></td>
-        <td><%= link_to article.integer %></td>
-        <td><%= link_to article.float %></td>
-        <td><%= link_to article.string %></td>
-        <td><%= link_to article.text %></td>
-        <td><%= link_to article.datetime %></td>
+        <td><%= article.boolean %></td>
+        <td><%= article.binary %></td>
+        <td><%= article.integer %></td>
+        <td><%= article.float %></td>
+        <td><%= article.string %></td>
+        <td><%= article.text %></td>
+        <td><%= article.datetime %></td>
       </tr>
       <% end %>
     </tbody>
