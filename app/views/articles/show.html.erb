@@ -1,0 +1,55 @@
+<div class="contextual">
+<%= link_to_if_authorized(l(:button_edit),
+	{:action => 'edit', :project_id => @project, :id => @article.id},
+	 :class => 'icon icon-edit') %>
+<%= link_to_if_authorized(l(:button_delete),
+	{:action => 'destroy', :project_id => @project, :id => @article.id},
+	 :confirm => l(:text_are_you_sure), :method => :delete,
+	 :class => 'icon icon-del') %>
+</div>
+
+<h2><%= l(:label_title_articles) %>#<%= @article.id %></h2>
+
+<div class="issue">
+  <div class="subject">
+    <h3><%= @article.string %></h3>
+  </div>
+
+  <div class="attributes">
+    <div class="splitcontent">
+      <div class="splitcontentleft">
+        <div class="attribute">
+          <div class="label"><span>Boolean: </span></div>
+          <div class="value"><%= @article.boolean ? l(:general_text_yes) : l(:general_text_no) %></div>
+        </div>
+        <div class="attribute">
+          <div class="label"><span>Datetime: </span></div>
+          <div class="value"><%= @article.datetime %></div>
+        </div>
+        <% unless @article.text.blank? %>
+          <div class="attribute">
+            <div class="label"><span>Text: </span></div>
+            <div class="wiki">
+              <%= textilizable @article.text %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="splitcontentleft">
+        <div class="attribute">
+          <div class="label"><span>Binary: </span></div>
+          <div class="value"><%= @article.binary %></div>
+        </div>
+        <div class="attribute">
+          <div class="label"><span>Integer: </span></div>
+          <div class="value"><%= @article.integer %></div>
+        </div>
+        <div class="attribute">
+          <div class="label"><span>Float: </span></div>
+          <div class="value"><%= @article.float %></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

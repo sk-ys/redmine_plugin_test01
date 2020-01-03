@@ -23,7 +23,7 @@
     <tbody>
       <% @articles.each do |article| %>
       <tr class="<%= cycle('odd', 'even') %>">
-        <td><%= article.id %></td>
+        <td><%= link_to(article.id, project_article_path(id: article.id)) %></td>
         <td><%= article.boolean %></td>
         <td><%= article.binary %></td>
         <td><%= article.integer %></td>
