@@ -1,0 +1,17 @@
+<%= error_messages_for 'article' %>
+<div class="box">
+  <p><%= form.check_box :boolean, :required => true %></p>
+  <p>
+    Binary
+    <%= form.radio_button :binary, 0, checked: true %>
+    <%= form.label(:binary, 0, value: 0)  %>
+    <%= form.radio_button :binary, 1 %>
+    <%= form.label(:binary, 1, value: 1)  %>
+  </p>
+  <p><%= form.number_field :integer %></p>
+  <p><%= form.number_field :float %></p>
+  <p><%= form.datetime_field :datetime %></p>
+  <p><%= form.text_field :string, :size => 100 %></p>
+  <p><%= form.text_area :text, :class => 'wiki-edit' %></p>
+  <%= wikitoolbar_for 'article_text' %>
+</div>
