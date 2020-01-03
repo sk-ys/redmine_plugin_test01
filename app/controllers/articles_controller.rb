@@ -32,6 +32,17 @@ class ArticlesController < ApplicationController
   def edit
   end
 
+  def update
+    params.permit!  # ←が無いと ActiveModel::ForbiddenAttributesError となる
+    @article.attributes = params[:article]
+    if @article.save
+      flash[:notice] = l(:notice_successful_update)
+      redirect_to({ :action => 'show', :id => @article.id, :project_id => @project })
+    end
+    rescue ActiveRecord::StaleObjectError
+    flash.now[:error] = l(:notice_locking_conflict)
+  end
+
 private
   def find_project
     @project = Project.find(params[:project_id])
