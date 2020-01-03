@@ -1,3 +1,9 @@
+<div class="contextual">
+	<%= # link_to_if_authorized(l(:label_new_article),
+	  link_to(l(:label_new_article),
+		{:action => 'new'},
+		 :class => 'icon icon-add') %>
+</div>
 <h2>ArticlesController#index</h2>
 
 <% if (@articles.blank?) %>
