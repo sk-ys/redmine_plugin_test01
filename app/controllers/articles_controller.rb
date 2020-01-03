@@ -24,6 +24,11 @@ class ArticlesController < ApplicationController
   def show
   end
 
+  def destroy
+    @article.destroy
+    redirect_to({ :action => 'index', :project_id => @project })
+  end
+
 private
   def find_project
     @project = Project.find(params[:project_id])
