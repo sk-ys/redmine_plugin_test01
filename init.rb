@@ -1,3 +1,5 @@
+require_dependency 'plugin_test01/hooks'
+
 Redmine::Plugin.register :plugin_test01 do
   name 'PluginTest01_Knowledgebase'
   author 'Alex Bevilacqua, sk-ys'

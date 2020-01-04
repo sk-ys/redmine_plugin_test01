@@ -1,4 +1,4 @@
-include PluginTest01SettingsHelper
+# include PluginTest01SettingsHelper
 
 module PluginTest01
   class Hooks < Redmine::Hook::ViewListener
@@ -24,7 +24,8 @@ module PluginTest01
     # callback method version
     # 動的に内容を変化させる場合に使えそう
     def view_layouts_base_content(context={ })
-      flg_hook_test = plugin_test01_settings_value(:flg_hook_test)
+      # flg_hook_test = plugin_test01_settings_value(:flg_hook_test)
+      flg_hook_test = true
       if flg_hook_test
         context[:controller].send(:render_to_string, {
           # :partial => "hooks/my_plugin/view_issues_form_details_bottom",
@@ -36,6 +37,6 @@ module PluginTest01
 
     # subtask like hook
     render_on :view_issues_show_description_bottom,
-      :partial => '/hooks/view_issues_show_description_bottom'
+      :partial => '/hooks/plugin_test01/view_issues_show_description_bottom'
   end
 end
