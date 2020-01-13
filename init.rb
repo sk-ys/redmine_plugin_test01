@@ -1,4 +1,5 @@
 require_dependency 'plugin_test01/hooks'
+require_dependency 'plugin_test01/patch'
 
 Redmine::Plugin.register :plugin_test01 do
   name 'PluginTest01_Knowledgebase'
@@ -67,4 +68,8 @@ Redmine::Plugin.register :plugin_test01 do
       :categories    => [:index, :show, :new, :create, :edit, :update, :delete]
     }
   end
+end
+
+Rails.configuration.to_prepare do
+  RedminePlugin01::Plugin01Patch.install
 end
